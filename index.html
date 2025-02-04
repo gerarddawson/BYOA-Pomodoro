@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Pomodoro Timer</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Pomodoro Timer</h1>
+        <div class="mode-toggle">
+            <span class="mode-label">Work</span>
+            <label class="switch">
+                <input type="checkbox" id="mode-switch" onchange="handleModeToggle(this)">
+                <span class="slider"></span>
+            </label>
+            <span class="mode-label">Rest</span>
+        </div>
+        <div id="task-section">
+            <h2 id="task-prompt">What are you going to work on?</h2>
+            <input type="text" id="task-input" placeholder="Enter your task...">
+        </div>
+        <div id="timer"><span class="minutes">25</span><span class="separator">:</span><span class="seconds">00</span></div>
+        <div class="button-group">
+            <button onclick="startTimer()">Start</button>
+            <button onclick="pauseTimer()">Pause</button>
+            <button onclick="resetTimer()">Reset</button>
+        </div>
+    </div>
+    <script src="timer.js"></script>
+</body>
+</html> 
