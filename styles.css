@@ -80,6 +80,14 @@ button:hover {
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
 }
 
+button.hidden {
+    display: none;
+}
+
+button.visible {
+    display: inline-block;
+}
+
 .mode-buttons {
     margin-bottom: 20px;
     display: flex;
@@ -191,4 +199,96 @@ input:checked + .slider {
 
 input:checked + .slider:before {
     transform: translateX(26px);
+}
+
+.history-section {
+    margin-top: 30px;
+    width: 100%;
+}
+
+.history-section h2 {
+    color: #e2e8f0;
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+#history-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: rgba(51, 65, 85, 0.5);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+#history-table th,
+#history-table td {
+    padding: 12px;
+    text-align: left;
+    color: #e2e8f0;
+    border-bottom: 1px solid rgba(148, 163, 184, 0.2);
+}
+
+#history-table th {
+    background: rgba(51, 65, 85, 0.8);
+    font-weight: 500;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+#history-table tbody tr:hover {
+    background: rgba(51, 65, 85, 0.7);
+}
+
+.status-complete {
+    color: #10b981 !important;
+    font-weight: 500;
+}
+
+.status-incomplete {
+    color: #f97316 !important;
+    font-weight: 500;
+}
+
+.history-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.history-header h2 {
+    margin: 0;
+}
+
+#clear-history {
+    color: #ef4444;
+    text-decoration: none;
+    font-size: 0.9rem;
+    opacity: 0.8;
+    transition: opacity 0.2s;
+}
+
+#clear-history:hover {
+    opacity: 1;
+}
+
+.delete-entry {
+    color: #ef4444;
+    opacity: 0;
+    cursor: pointer;
+    transition: opacity 0.2s;
+    background: none;
+    border: none;
+    padding: 4px 8px;
+    font-size: 1.1rem;
+}
+
+#history-table tr:hover .delete-entry {
+    opacity: 0.8;
+}
+
+.delete-entry:hover {
+    opacity: 1 !important;
 } 
