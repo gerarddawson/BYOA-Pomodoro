@@ -13,7 +13,8 @@ body {
 }
 
 .container {
-    width: 450px;
+    width: 600px;
+    min-width: 450px;
     background: rgba(30, 41, 59, 0.7);
     backdrop-filter: blur(10px);
     border: 1px solid rgba(148, 163, 184, 0.2);
@@ -23,6 +24,8 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    max-height: 90vh;
+    overflow-y: auto;
 }
 
 h1, #timer, #task-prompt, .mode-label {
@@ -204,6 +207,7 @@ input:checked + .slider:before {
 .history-section {
     margin-top: 30px;
     width: 100%;
+    overflow-x: auto;
 }
 
 .history-section h2 {
@@ -215,10 +219,12 @@ input:checked + .slider:before {
 
 #history-table {
     width: 100%;
+    min-width: 500px;
     border-collapse: collapse;
     background: rgba(51, 65, 85, 0.5);
     border-radius: 12px;
     overflow: hidden;
+    table-layout: fixed;
 }
 
 #history-table th,
@@ -227,7 +233,16 @@ input:checked + .slider:before {
     text-align: left;
     color: #e2e8f0;
     border-bottom: 1px solid rgba(148, 163, 184, 0.2);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
+
+#history-table th:nth-child(1) { width: 20%; }
+#history-table th:nth-child(2) { width: 15%; }
+#history-table th:nth-child(3) { width: 45%; }
+#history-table th:nth-child(4) { width: 15%; }
+#history-table th:nth-child(5) { width: 5%; }
 
 #history-table th {
     background: rgba(51, 65, 85, 0.8);
